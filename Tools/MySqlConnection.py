@@ -1,6 +1,6 @@
 import pymysql
 
-class MysqlConnection:
+class MySqlConnection:
     # A class created for mysql connection
     def __init__(self,config):
     # INIT
@@ -95,7 +95,7 @@ def main():
               "pwd": "123456",
               "db": "test"}
 
-    mc = MysqlConnection(config)
+    mc = MySqlConnection(config)
     db = "IRIS"
     iris_config=[
         ("ID","INT","NOT NULL","AUTO_INCREMENT","PRIMARY KEY"),
