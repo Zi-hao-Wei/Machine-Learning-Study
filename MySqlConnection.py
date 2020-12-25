@@ -28,12 +28,7 @@ class MysqlConnection:
         create_sql = create_sql.rstrip()
         create_sql = create_sql.rstrip(",")
         create_sql=create_sql  + " )"
-        
-        try:
-            self._cursor.execute(create_sql)
-            self._db.commit()
-        except:
-            self._db.rollback()
+        self.sql_execute(create_sql)
 
     def insert(self,table,values,time=1):
         insert_sql="INSERT INTO " + table
@@ -52,11 +47,7 @@ class MysqlConnection:
         insert_sql = insert_sql + " "+ keys + " VALUES " + value 
 
         for i in range(0,time):
-            try:
-                self._cursor.execute(insert_sql)
-                self._db.commit()
-            except:
-                self._db.rollback()
+            self.sql_execute(insert_sql)
     
     def select(self,table,columns=[],where=""):
         column_str=""
@@ -83,12 +74,7 @@ class MysqlConnection:
 
     def delete(self,table,where):
         delete_sql= "DELETE FROM " + table + " WHERE " + where
-        # print(delete_sql)
-        try:
-            self._cursor.execute(delete_sql)
-            self._db.commit()
-        except:
-            self._db.rollback()
+        self.sql_execute(delete_sql)
 
     def sql_execute(self,sql):
         try:
