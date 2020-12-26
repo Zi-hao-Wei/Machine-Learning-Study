@@ -42,11 +42,16 @@ class KNN:
                 typeANS=case[1]
 
         return typeANS
-    def processALL(self,Test):
+    def processALL(self,Test,printed=True):
+        truth=0
         for testCase in Test:
             ans = self.process(testCase[0])
             label=testCase[1]
-            print((ans,label,ans==label))
+            if (printed):
+                print((ans,label,ans==label))
+            if (ans==label):
+                truth=truth+1
+        print(truth/len(Test))
 
 
 def main():
@@ -55,7 +60,7 @@ def main():
     divider=TestTrainDataDivider.TestTrainDataDivider(config)
     (Test,Train)=divider.divide(0.1)
     knn=KNN(K,Train)
-    knn.processALL(Test)
+    knn.processALL(Test,False)
 
 if __name__ == '__main__':
     main()
