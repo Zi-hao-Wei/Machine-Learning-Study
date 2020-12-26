@@ -1,7 +1,7 @@
 import sys
 sys.path.append("..")
 import Tools.MySqlConnection
-import KNNconfig
+import DBconfig
 class IrisDataInput:
     def __init__(self,path):
         try:
@@ -23,7 +23,7 @@ class IrisDataInput:
         return self.processedLines
     
     def insertToDataBase(self):
-        config=KNNconfig.KNNconfig()
+        config=DBconfig.DBconfig()
 
         mc = Tools.MySqlConnection.MySqlConnection(config.db_config)
         
