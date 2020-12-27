@@ -26,7 +26,7 @@ class SMSDataInput:
     def dump(self,path):
         data={}
         data["ham"]=self._ham
-        data["spam"]=self._ham
+        data["spam"]=self._spam
         with open(path, "w", encoding='utf-8') as f:
             json.dump(data,f,indent=4)
 

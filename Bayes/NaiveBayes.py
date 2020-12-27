@@ -19,8 +19,6 @@ class NaiveBayes:
 
         self._hamWordsCount=len(self._hamWordsList)
         self._spamWordsCount=len(self._spamWordsList)
-        print(self._hamWordsCount)
-        print(self._spamWordsCount)
 
 
         self._allWordsCount = len(list(set(self._hamWordsList+self._spamWordsList)))
@@ -40,56 +38,47 @@ class NaiveBayes:
         return wordsHashTable
         
     def probability(self,word):
-        # print(self._hamHash)
-
         hamPro=self._hamHash.get(word,0)+1
-        spamPro=self._spamHash.get(word,0)+1
+        spamPro=self._spamHash.get(word,0)+1 
 
-        # print("-----------------")
-        # print(hamPro)
-        # print(spamPro)
 
         hamPro=math.log(hamPro/(self._hamWordsCount+self._allWordsCount))
         spamPro=math.log(spamPro/(self._spamWordsCount+self._allWordsCount))
-        # print("-----------------")
-        # print(hamPro)
-        # print(spamPro)
-        # print("-----------------")
-        # print("-----------------")
         
         return(hamPro,spamPro)
     
     def predict_one(self,test):
         hamPro=math.log(self._hamProbability)
         spamPro=math.log(self._spamProbabilty)
-        print("ORIGINAL")
-        # print(hamPro)
-        # print(spamPro)
 
         for word in test:
             pro=self.probability(word)
             hamPro=hamPro+pro[0]
             spamPro=spamPro+pro[1]
         
-        print(hamPro)
-        print(spamPro)
-        
         if (hamPro>=spamPro):
             return "ham"
         else:
             return "spam"
 
+    def predict(self,Test):
+        hamPredict=0
+        spamPredict=0
+        for test in Test["ham"]:
+            if(self.predict_one(test)=="ham"):
+                hamPredict=hamPredict+1
+        for test in Test["spam"]:
+            if (self.predict_one(test)=="spam"):
+                spamPredict=spamPredict+1
+            
+        print("Ham",hamPredict/len(Test["ham"]))
+        print("Spam",spamPredict/len(Test["spam"]))
+
 def main():
     divider=TestTrainDataDivider.TestTrainDataDivider("SMSSpamData.json")
     (Test,hamTrain,spamTrain)=divider.divide(0.2)
     bayes=NaiveBayes(hamTrain,spamTrain)
-
-    for test in Test["spam"]:
-        print(test)
-        print(bayes.predict_one(test))
-        # break
-
-
+    bayes.predict(Test)
 
 if __name__ == '__main__':
     main()
