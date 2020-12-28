@@ -82,7 +82,17 @@ class MySqlConnection:
             self._db.commit()
         except:
             self._db.rollback()
-
+ 
+    def sql_fetch(self):
+        try:
+            results=self._cursor.fetchall()
+            return results
+        except:
+            self._db.rollback()
+            return ()
+        
+    def returnDB(self):
+        return self._db
 
     def __del__(self):
         self._cursor.close()
