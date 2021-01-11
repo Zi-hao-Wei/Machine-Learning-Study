@@ -31,4 +31,17 @@ mcm=confusion_matrix(y_test,y_predict)
 # mcm=multilabel_confusion_matrix(y_test,y_predict,label=labels)
 print(mcm)
 plt.imshow(mcm, cmap=plt.cm.Blues)
+indices = range(len(mcm))
+plt.xticks(indices, labels)
+plt.yticks(indices, labels)
+plt.colorbar()
+
+plt.xlabel('Predicted')
+plt.ylabel('True')
+plt.title('Confusion Matrix')
+
+for first_index in range(len(mcm)):    #第几行
+    for second_index in range(len(mcm[first_index])):    #第几列
+        plt.text(first_index, second_index, mcm[first_index][second_index])
+
 plt.show()
