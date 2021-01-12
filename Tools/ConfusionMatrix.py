@@ -19,4 +19,12 @@ class ConfusionMatrix:
             for second_index in range(len(self.matrix[first_index])):    #第几列
                 plt.text(first_index, second_index, self.matrix[first_index][second_index])
         plt.show()
-        
+
+def main():
+    matrix=[[20,0,0],[ 0,13,2],[ 0,0,10]]
+    labels=["Iris-setosa","Iris-versicolor","Iris-virginica"]
+    cm=ConfusionMatrix(matrix,labels)
+    cm.plot()
+
+if __name__ == '__main__':
+    main()
