@@ -32,6 +32,7 @@ for epoch in range(50):
         inputs,labels=inputs.to(device),labels.to(device)
         outputs=net(inputs)
         loss=criterion(outputs,labels)
+
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
