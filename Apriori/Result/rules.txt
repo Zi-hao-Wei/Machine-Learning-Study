@@ -1,0 +1,99 @@
+ something ->  microwave
+ stainless ->  microwave
+ steel ->  microwave
+ cook ->  microwave
+ ge ->  microwave
+ home ->  microwave
+ lot ->  microwave
+ my ->  microwave
+ no ->  microwave
+ range ->  microwave
+ minute ->  microwave
+ power ->  microwave
+ day ->  microwave
+ function ->  microwave
+ house ->  microwave
+ reheat ->  microwave
+ so ->  microwave
+ sharp ->  microwave
+ model ->  microwave
+ call ->  microwave
+ anything ->  microwave
+ appliance ->  microwave
+ cost ->  microwave
+ samsung ->  microwave
+ cabinet ->  microwave
+ month, work ->  microwave
+ microwave, month ->  work
+ problem, work ->  microwave
+ product, work ->  microwave
+ button, use ->  microwave
+ button, microwave ->  use
+ month, time ->  microwave
+ size, use ->  microwave
+ microwave, size ->  use
+ time, use ->  microwave
+ microwave, time ->  use
+ heat, work ->  microwave
+ food, time ->  microwave
+ food, microwave ->  time
+ look, time ->  microwave
+ service, time ->  microwave
+ thing, time ->  microwave
+ time, year ->  microwave
+ door, time ->  microwave
+ work, year ->  microwave
+ button, microwave ->  cook
+ button, cook ->  microwave
+ microwave, power ->  cook
+ cook, power ->  microwave
+ cook, use ->  microwave
+ cook, microwave ->  use
+ feature, use ->  microwave
+ feature, microwave ->  use
+ power, use ->  microwave
+ microwave, power ->  use
+ look, use ->  microwave
+ problem, use ->  microwave
+ thing, use ->  microwave
+ microwave, thing ->  use
+ model, use ->  microwave
+ review, use ->  microwave
+ microwave, review ->  use
+ heat, use ->  microwave
+ heat, microwave ->  use
+ heat, time ->  microwave
+ look, work ->  microwave
+ time, work ->  microwave
+ appliance, use ->  microwave
+ appliance, microwave ->  use
+ cook, time ->  microwave
+ cook, microwave ->  time
+ food, microwave ->  heat
+ food, heat ->  microwave
+ food, use ->  microwave
+ food, microwave ->  use
+ model, problem ->  microwave
+ power, time ->  microwave
+ microwave, power ->  time
+ problem, time ->  microwave
+ purchase, time ->  microwave
+ microwave, purchase ->  time
+ purchase, use ->  microwave
+ review, time ->  microwave
+ microwave, review ->  time
+ time, unit ->  microwave
+ unit, use ->  microwave
+ microwave, unit ->  use
+ kitchen, use ->  microwave
+ kitchen, microwave ->  use
+ problem, year ->  microwave
+ use, year ->  microwave
+ call, service ->  microwave
+ call, microwave ->  service
+ service, work ->  microwave
+ use, work ->  microwave
+ microwave, time, use ->  cook
+ cook, time, use ->  microwave
+ cook, microwave, use ->  time
+ cook, microwave, time ->  use
